@@ -1,0 +1,36 @@
+<html>
+
+<head>
+	<title>
+		Filcture
+	</title>
+</head>
+
+<body style="background-color: rgb(161, 175, 192)">
+
+	<h1 style="color: red" align="center"> A Filter App </h1>
+	<div style="background-color: white">
+
+		<form method= "POST" action="/" enctype="multipart/form-data">  <!--is we are working with file we have to write enctype-->
+
+			<input type="file" name="userfile" placeholder="Your Image">
+
+			<button type="submit">SUBMIT</button>
+		</form>
+
+	</div>
+	<br>
+	<br>
+
+	
+		{% if your_text %}
+		
+		<img src= "../static/{{your_text['img']}}"  alt="USER IMAGE" width="500px" height="400px">
+		<br> 
+		<h1> Modified Picture : <i style="color: red"> {{your_text['text'] }} </i> </h1>
+		{% endif %}
+	
+	
+</body>
+
+</html>
