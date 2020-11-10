@@ -20,15 +20,15 @@ def stippler(imgNew,width,height):
                 imgNew.putpixel( (x,y), (0, 255))
     return imgNew
 
-# construct the argument parse and parse the arguments
+def main(path):
 
-img = Image.open("/home/rjn/Pictures/My Pictures/rajan.jpeg")
-img = img.convert('LA') # Convert the image into Greyscale('L') with alpha transparency('A') to determine how a pixel is rendered when blended with another.
+	img = Image.open(path)
+	img = img.convert('LA') # Convert the image into Greyscale('L') with alpha transparency('A') to determine how a pixel is rendered when blended with another.
 
-width, height = img.size
-# here we are converting the image to the greyscale form('L') with an alpha ('A') transparency
-imgNew = Image.new('LA', (width, height))
+	width, height = img.size
+	# here we are converting the image to the greyscale form('L') with an alpha ('A') transparency
+	imgNew = Image.new('LA', (width, height))
 
-imgNew=stippler(imgNew,width,height)
-            
-imgNew.save('assets/Stippled.png')
+	imgNew=stippler(imgNew,width,height)
+		    
+	imgNew.save('assets/Stippled.png')

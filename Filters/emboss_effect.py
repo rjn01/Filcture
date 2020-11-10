@@ -32,12 +32,12 @@ def emboss_effect(img):
 
 
 #construct the argument parse and parse the arguments
+def main(path):
+	img = cv2.imread(path)
 
-img = cv2.imread("/home/rjn/Pictures/My Pictures/rajan.jpeg")
-
-# Convert to image with emboss effect
-output1,output2 = emboss_effect(img)
-# Save the  image
-cv2.imwrite('assets/emboss_effect_grayscale.jpg',output2)
-cv2.imwrite('assets/emboss_effect_coloured.jpg',output1)
-print("Your results are ready!")
+	# Convert to image with emboss effect
+	output1,output2 = emboss_effect(img)
+	# Save the  image
+	cv2.imwrite('assets/emboss_effect_grayscale.jpg',output2)
+	cv2.imwrite('assets/emboss_effect_coloured.jpg',output1)
+	print("Your results are ready!")

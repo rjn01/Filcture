@@ -44,16 +44,16 @@ def motionBlur(img):
     
 # construct the argument parse and parse the arguments
 
+def main(path):
+	img = cv2.imread(path)
 
-img = cv2.imread("/home/rjn/Pictures/My Pictures/rajan.jpeg")
-
-print("Work in Progress.")
-# Save the outputs. 
-v,h,d=motionBlur(img)
-cv2.imwrite('assets/horizontalBlur.jpg', v) 
-cv2.imwrite('assets/verticalBlur.jpg', h)
-cv2.imwrite('assets/diagonalBlur.jpg', d) 
-print("Work done successfully!")
+	print("Work in Progress.")
+	# Save the outputs. 
+	v,h,d=motionBlur(img)
+	cv2.imwrite('assets/horizontalBlur.jpg', v) 
+	cv2.imwrite('assets/verticalBlur.jpg', h)
+	cv2.imwrite('assets/diagonalBlur.jpg', d) 
+	print("Work done successfully!")
 
 
 

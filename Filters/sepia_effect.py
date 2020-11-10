@@ -42,11 +42,11 @@ def convert_sepia(image):
     return new
 
 
-# construct the argument parse and parse the arguments
 
-# reading the image
-img = Image.open("/home/rjn/Pictures/My Pictures/rajan.jpeg")
-# Convert to sepia
-sepia_img = convert_sepia(img)
-# Save the  image
-sepia_img.save('assets/sepia_effect.jpg', 'JPEG')
+def main(path):
+	# reading the image
+	img = Image.open(path)
+	# Convert to sepia
+	sepia_img = convert_sepia(img)
+	# Save the  image
+	sepia_img.save('assets/sepia_effect.jpg', 'JPEG')

@@ -33,15 +33,17 @@ def cartoonize(img):
 #construct the argument parse and parse the arguments
 
 # reading the image
-img = cv2.imread("/home/rjn/Pictures/My Pictures/rajan.jpeg")
+
+def main(path):
+	img = cv2.imread(path)
 
 
-print("Wait, Work is in Progess.")
+	print("Wait, Work is in Progess.")
 
-res_img1,res_img2 = cartoonize(img)
+	res_img1,res_img2 = cartoonize(img)
 
-cv2.imwrite("assets/cartoon1.jpg", res_img1)
-cv2.imwrite("assets/black_and_wihte_cartoon.jpg", res_img2)
+	cv2.imwrite("assets/cartoon1.jpg", res_img1)
+	cv2.imwrite("assets/black_and_wihte_cartoon.jpg", res_img2)
 
 
-print("Your results are ready!")
+	print("Your results are ready!")

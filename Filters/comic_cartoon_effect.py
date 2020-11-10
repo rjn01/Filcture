@@ -43,11 +43,11 @@ def comic(img):
 
 
 #construct the argument parse and parse the arguments
+def main(path):
+	# reading the image
+	img = cv2.imread(path)
 
-# reading the image
-img = cv2.imread("/home/rjn/Pictures/My Pictures/rajan.jpeg")
-
-print("Wait, Work is in Progess.")
-res_img3 = comic(img)
-cv2.imwrite("assets/comic_cartoon_effect.jpg", res_img3)
-print("Your results are ready!")
+	print("Wait, Work is in Progess.")
+	res_img3 = comic(img)
+	cv2.imwrite("assets/comic_cartoon_effect.jpg", res_img3)
+	print("Your results are ready!")
