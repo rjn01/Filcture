@@ -154,7 +154,7 @@ def KHist(hist):
             
     return C
     
-def start(user_image="/home/rjn/Pictures/My Pictures/rajan.jpeg"):
+def main(user_image="/home/rjn/Pictures/My Pictures/rajan.jpeg"):
     image = cv2.imread(user_image)
 
     start_time = time.time()
@@ -180,5 +180,5 @@ def start(user_image="/home/rjn/Pictures/My Pictures/rajan.jpeg"):
 if __name__ == '__main__':
     # construct the argument parse and parse the arguments
     #reading the image
-    start()
+    main()
     
