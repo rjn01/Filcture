@@ -1,6 +1,6 @@
 
 from flask import Flask, render_template, redirect, request
-from Filters import *
+from Neural_Style import new_style
 
 app =  Flask(__name__)
 
@@ -13,13 +13,13 @@ def hello():
 
 def submit_data():
     if request.method== 'POST':
-        f = request.files["userfile"]  
-        path = "./static/{}".format(f.filename)
+        f = request.files["user_picture"]  
+        path = "./static/new_file".format(f.filename)
         f.save(path)
         
-        '''if path:
-            output = start(path)
-            print(output)
+        if path:
+            output = new_style.main(path,'./Desktop/New/Filcture/Neural-Style/default_style.jpg')
+            '''print(output)
             result_dic = {
             'img' : f.filename,
             'text' : output

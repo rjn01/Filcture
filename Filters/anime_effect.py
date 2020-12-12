@@ -154,7 +154,7 @@ def KHist(hist):
             
     return C
     
-def main(user_image="/home/rjn/Pictures/My Pictures/rajan.jpeg"):
+def main(user_image):
     image = cv2.imread(user_image)
 
     start_time = time.time()
@@ -173,6 +173,7 @@ def main(user_image="/home/rjn/Pictures/My Pictures/rajan.jpeg"):
     cv2.imwrite("assets/r2.jpg", output3) 
     cv2.imwrite("assets/r3.jpg", output4)
     print("Your results are ready!")
+    return("assets/r3.jpg")
     
 
 
