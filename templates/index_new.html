@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Filcture</title>
+  <link rel="shortcut icon" href="./favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="master.css">
+  <script src="master.js"></script>
+</head>
+
+<body>
+  <header class="filcture-heading">Filcture</header>
+
+  <section class="upload-picture-container">
+    <form action="/" method="POST" enctype="multipart/form-data" class="upload-form">
+      <input type="file" name="user_picture" accept="image/*" id="uploadButton"
+      onchange="showUserImage(this);" hidden/>
+      <label for="uploadButton" class="button upload-button">Upload Picture</label>
+      <button type="submit" class="button apply-button">Apply Filters</button>
+    </form>
+  </section>
+
+  <section id="uploaded-picture-container" style="display: none;">
+    <img src="#" alt="uploaded_image" id="uploaded-picture">
+    <figcaption id="picture-caption"></figcaption>
+  </section>
+
+</body>
+
+</html>
