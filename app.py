@@ -17,13 +17,18 @@ def submit_data():
         f = request.files["user_picture"]
         path = "./static/new_file".format(f.filename)
         f.save(path)
-        style = "./static/style_images/style4.jpg"
+        #style = "./static/style_images/style4.jpg"
+        
+        style_name = request.form['user_style']
+        print(style_name)
+        style = "./static/style_images/" + style_name + ".jpg"
 
         if path:
             output = new_style.main(path, style)
             b = datetime.datetime.now()
             print(b-a)
-            """print(output)
+            print(output)
+            """
             result_dic = {
             'img' : f.filename,
             'text' : output
