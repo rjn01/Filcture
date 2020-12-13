@@ -7,7 +7,7 @@ app =  Flask(__name__)
 @app.route('/') 
 
 def hello():  
-    return render_template('index_new.html') 
+    return render_template('index.html') 
     
 @app.route('/', methods = ['POST']) 
 
@@ -32,7 +32,7 @@ def submit_data():
             'text' : "NO number plate detected"
             }
         '''
-    return(render_template("index_new.html", your_text = "Nice"))
+    return(render_template("index.html", your_text = "Nice"))
     
 
 if __name__== "__main__":
