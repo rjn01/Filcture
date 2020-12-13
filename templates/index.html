@@ -7,24 +7,94 @@
   <link rel="shortcut icon" href="./favicon_io/favicon.ico" type="image/x-icon">
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/master.css') }}">
   <script src="{{ url_for('static',filename='js/master.js') }}"></script>
+  <!-- DO NOT REMOVE -->
+  <!-- <link rel= "stylesheet" type= "text/css" href= "../static/css/master.css">
+  <script src="../static/js/master.js"></script> -->
 </head>
 
 <body>
   <header class="filcture-heading">Filcture</header>
 
-  <section class="upload-picture-container">
-    <form action="/" method="POST" enctype="multipart/form-data" class="upload-form">
-      <input type="file" name="user_picture" accept="image/*" id="uploadButton"
-      onchange="showUserImage(this);" hidden/>
-      <label for="uploadButton" class="button upload-button">Upload Picture</label>
-      <button type="submit" class="button apply-button">Apply Filters</button>
-    </form>
-  </section>
+  <div class="filcture-body">
+    <div class="upload-section">
+      <section class="upload-picture-container">
+        <form action="/" method="POST" enctype="multipart/form-data" class="upload-form">
+          <div class="user-choices">
+            <input type="file" name="user_picture" accept="image/*" id="uploadButton"
+            onchange="showUserImage(this);" hidden required/>
+            <label for="uploadButton" class="button upload-button">Upload Picture</label>
+            <select name="user_style" id="" class="user-select" required>
+              <option value="style1" selected disabled>Select Style</option>
+              <option value="style1">Style 1</option>
+              <option value="style2">Style 2</option>
+              <option value="style3">Style 3</option>
+              <option value="style4">Style 4</option>
+              <option value="style5">Style 5</option>
+              <option value="style6">Style 6</option>
+              <option value="style7">Style 7</option>
+              <option value="style8">Style 8</option>
+              <option value="style9">Style 9</option>
+            </select>
+          </div>
+          <button type="submit" class="button apply-button">Apply Filters</button>
+        </form>
+      </section>
+    
+      <section id="uploaded-picture-container" style="display: none;">
+        <img src="#" alt="uploaded_image" id="uploaded-picture">
+        <figcaption id="picture-caption"></figcaption>
+      </section>
 
-  <section id="uploaded-picture-container" style="display: none;">
-    <img src="#" alt="uploaded_image" id="uploaded-picture">
-    <figcaption id="picture-caption"></figcaption>
-  </section>
+      <!-- TODO: Add filtered picture logic -->
+
+      <!-- <section id=filtered-picture-container" style="display: none;">
+        <img src="#" alt="filtered_image" id="filtered-picture">
+        <figcaption id="picture-caption"></figcaption>
+      </section> -->
+    </div>
+  
+    <div class="style-image-section">
+      <section id="style-images-container">
+        <div>
+          <img src="../static/style_images/style1.jpg" alt="">
+          <figcaption>Style 1</figcaption>
+        </div>
+        <div>
+          <img src="../static/style_images/style2.jpg" alt="">
+          <figcaption>Style 2</figcaption>
+        </div>
+        <div>
+          <img src="../static/style_images/style3.jpg" alt="">
+          <figcaption>Style 3</figcaption>
+        </div>
+        <div>
+          <img src="../static/style_images/style4.jpg" alt="">
+          <figcaption>Style 4</figcaption>
+        </div>
+        <div>
+          <img src="../static/style_images/style5.jpg" alt="">
+          <figcaption>Style 5</figcaption>
+        </div>
+        <div>
+          <img src="../static/style_images/style6.jpg" alt="">
+          <figcaption>Style 6</figcaption>
+        </div>
+        <div>
+          <img src="../static/style_images/style7.jpg" alt="">
+          <figcaption>Style 7</figcaption>
+        </div>
+        <div>
+          <img src="../static/style_images/style8.jpg" alt="">
+          <figcaption>Style 8</figcaption>
+        </div>
+        <div>
+          <img src="../static/style_images/style9.jpg" alt="">
+          <figcaption>Style 9</figcaption>
+        </div>
+      </section>
+    </div>
+  </div>
+
 
 </body>
 

@@ -6,9 +6,9 @@ function showUserImage(input) {
       let uploadedPictureContainer = document.getElementById('uploaded-picture-container');
       let uploadedPicture = document.getElementById('uploaded-picture');
       let pictureCaption = document.getElementById('picture-caption');
-      uploadedPictureContainer.style.display = 'block';
+      uploadedPictureContainer.style.display = 'flex';
       uploadedPicture.src = event.target.result;
-      pictureCaption.textContent = 'Uploaded File:' + input.files[0].name;
+      pictureCaption.textContent = 'Original Image:' + input.files[0].name;
     };
 
     reader.readAsDataURL(input.files[0]);

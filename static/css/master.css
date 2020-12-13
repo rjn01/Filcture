@@ -7,13 +7,48 @@ body, h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+body {
+  background-color: #ffb396;
+}
+
 button {
   border: none;
   outline: none;
 }
 
-body {
-  background-color: #ffb396;
+img {
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px #000000;
+}
+
+figcaption{
+  color: #0a043c;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px #8ad7c1;
+  text-align: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f3eac2;
+  border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ec524b;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .filcture-heading {
@@ -28,8 +63,16 @@ body {
   background-color: #ec524b;
 }
 
-.upload-picture-container {
-  margin: 20px;
+.filcture-body {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .button {
@@ -45,14 +88,51 @@ body {
   opacity: 0.8;
 }
 
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-choices {
+  display: flex;
+}
+
 .upload-button {
   color: #f3eac2;
   background-color: #ec524b;
+  margin-right: 20px;
+}
+
+.user-select {
+  width: 200px;
+  padding: 12px 16px;
+  border: none;
+  background-color: #ec524b;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #f3eac2;
+  cursor: pointer;
+}
+
+.user-select option {
+  padding: 12px;
+  background-color: #f5b461;
+  font-weight: bold;
+}
+
+.user-select:focus {
+  border: none;
+  outline: none;
 }
 
 .apply-button {
   color: #f3eac2;
   background-color: #f5b461;
+  margin: 20px;
+  text-align: center;
 }
 
 .apply-button:focus {
@@ -61,15 +141,28 @@ body {
 }
 
 #uploaded-picture-container {
-  margin: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
 #uploaded-picture {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 300px;
+  max-height: 150px;
 }
 
-#picture-caption {
-  font-size: 12px;
-  color: gray;
+#style-images-container {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin-top: 20px;
+  max-height: 84vh;
+  overflow-y: auto;
+}
+
+#style-images-container div {
+  margin-bottom: 8px;
+}
+
+#style-images-container div img{
+  width: 180px;
+  height: 180px;
 }
