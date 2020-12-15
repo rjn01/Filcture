@@ -164,7 +164,7 @@ def main(user_image, style_image):
     style_reference_image = preprocess_image(style_reference_image_path)
     combination_image = tf.Variable(preprocess_image(base_image_path))
 
-    iterations = 10
+    iterations = 1
     for i in range(1, iterations + 1):
         loss, grads = compute_loss_and_grads(
             combination_image, base_image, style_reference_image
@@ -178,7 +178,7 @@ def main(user_image, style_image):
         keras.preprocessing.image.save_img(fname, img)
         
         
-    return('./assets/me_10.png')    
+    return('./assets/me_1.png')    
     
     
 

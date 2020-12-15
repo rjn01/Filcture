@@ -44,10 +44,13 @@
 
       <!-- TODO: Add filtered picture logic -->
 
-      <!-- <section id=filtered-picture-container" style="display: none;">
-        <img src="#" alt="filtered_image" id="filtered-picture">
-        <figcaption id="picture-caption"></figcaption>
-      </section> -->
+      {% if output %}
+
+      <section id=filtered-picture-container" style="display: none;">
+        <img src="./assets/me_1.png" alt="filtered_image" id="filtered-picture">
+        <figcaption id="picture-caption">{{ output['filename'] }}</figcaption>
+      </section>
+      {% endif %}
     </div>
   
     <div class="style-image-section">
