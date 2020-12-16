@@ -47,6 +47,14 @@
 
       <!-- TODO: Add filtered picture logic -->
 
+      {% if output %}
+
+      <section id="filtered-picture-container">
+        <img src="../static/Modified/me_5.png" alt="filtered_image" id="filtered-picture">
+        <figcaption id="picture-caption">{{ output['filename'] }}</figcaption>
+      </section>
+      {% endif %}
+
       <!-- <section id=filtered-picture-container" style="display: none;">
         <img src="#" alt="filtered_image" id="filtered-picture">
         <figcaption id="picture-caption"></figcaption>

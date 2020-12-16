@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request
 import datetime
+import time
 from Neural_Style import new_style
 
 app = Flask(__name__)
@@ -13,35 +14,32 @@ def hello():
 @app.route("/", methods=["POST"])
 def submit_data():
     if request.method == "POST":
-        a = datetime.datetime.now()
-        f = request.files["user_picture"]
-        path = "./static/new_file".format(f.filename)
-        f.save(path)
-        #style = "./static/style_images/style4.jpg"
         
-        style_name = request.form['user_style']
-        print(style_name)
+        f = request.files["user_picture"]
+        path = "./static/{}".format(f.filename)
+        
+        f.save(path)
+        # style = "./static/style_images/style4.jpg"
+
+        style_name = request.form["user_style"]
+        
         style = "./static/style_images/" + style_name + ".jpg"
 
-        if path:
-            output = new_style.main(path, style)
-            b = datetime.datetime.now()
-            print(b-a)
-            print(output)
-            """
-            result_dic = {
-            'img' : f.filename,
-            'text' : output
-        }
         
+        if path:
+
+            output = new_style.main(path, style)
+            
+            
+            
+            time.sleep(10)
+            out = {"filename": f.filename, "path": output}
 
         else:
-            result_dic = {
-            'img' : f.filename,
-            'text' : "NO number plate detected"
-            }
-        """
-    return render_template("index.html", your_text="Nice")
+            out = {"filename": f.filename, "path": "#"}
+
+        
+    return render_template("index.html", output=output)
 
 
 if __name__ == "__main__":
