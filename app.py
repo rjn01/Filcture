@@ -16,7 +16,7 @@ def submit_data():
     if request.method == "POST":
         
         f = request.files["user_picture"]
-        path = "./static/{}".format(f.filename)
+        path = "./static/user_images/{}".format(f.filename)
         
         f.save(path)
         # style = "./static/style_images/style4.jpg"
@@ -28,13 +28,13 @@ def submit_data():
         
         if path:
 
-            output = new_style.main(path, style)
+            output_path = new_style.main(path, style)
             
-            time.sleep(10)
-            out = {"filename": f.filename, "path": output}
+            # time.sleep(10)
+            output = {"filename": f.filename, "path": '.' + output_path}
 
         else:
-            out = {"filename": f.filename, "path": "#"}
+            output = {"filename": f.filename, "path": "#"}
 
         
     return render_template("index.html", output=output)

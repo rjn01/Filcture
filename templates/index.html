@@ -38,15 +38,15 @@
       </section>
     
       <section id="uploaded-picture-container" style="display: none;">
-        <img src="#" alt="uploaded_image" id="uploaded-picture">
+        <img src="#" alt="uploaded_image" id="uploaded-picture" class="picture-block">
         <figcaption id="picture-caption"></figcaption>
       </section>
 
       {% if output %}
 
       <section id="filtered-picture-container">
-        <img src="../static/Modified/me_5.png" alt="filtered_image" id="filtered-picture">
-        <figcaption id="picture-caption">{{ output['filename'] }}</figcaption>
+        <img src="{{ output['path'] }}" alt="filtered_image" class="picture-block">
+        <figcaption>Filtered Image: {{ output['filename'] }}</figcaption>
       </section>
       {% endif %}
     </div>
