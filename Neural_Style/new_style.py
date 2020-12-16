@@ -178,11 +178,5 @@ def main(user_image, style_image):
             img = deprocess_image(combination_image.numpy())
             fname = './static/Modified/' + result_prefix + "_%d.png" % i
             keras.preprocessing.image.save_img(fname, img)
-            
-        
         
     return(fname)    
-    
-    
-
-

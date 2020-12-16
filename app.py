@@ -30,8 +30,6 @@ def submit_data():
 
             output = new_style.main(path, style)
             
-            
-            
             time.sleep(10)
             out = {"filename": f.filename, "path": output}
 
