@@ -173,14 +173,10 @@ def main(user_image, style_image):
         
         
         print("Iteration %d: loss=%.2f" % (i, loss))
-        img = deprocess_image(combination_image.numpy())
-        fname = './assets/' + result_prefix + "_%d.png" % i
-        keras.preprocessing.image.save_img(fname, img)
+
+        if i == 1:
+            img = deprocess_image(combination_image.numpy())
+            fname = './static/Modified/' + result_prefix + "_%d.png" % i
+            keras.preprocessing.image.save_img(fname, img)
         
-        
-    return('./assets/me_1.png')    
-    
-    
-
-
-
+    return(fname)    
