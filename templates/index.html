@@ -44,9 +44,9 @@
 
       {% if output %}
 
-      <section id="filtered-picture-container">
-        <img src="{{ output['path'] }}" alt="filtered_image" class="picture-block">
-        <figcaption>Filtered Image: {{ output['filename'] }}</figcaption>
+      <section id="filtered-picture-container" style="display: flex;">
+        <img src="{{ output['path'] }}" alt="filtered_image" id="filtered-picture" class="picture-block">
+        <figcaption id="picture-caption">Filtered Image: {{ output['filename'] }}</figcaption>
       </section>
       {% endif %}
     </div>

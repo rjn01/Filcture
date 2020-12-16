@@ -146,9 +146,15 @@ figcaption{
   align-items: center;
 }
 
+#filtered-picture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .picture-block {
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 380px;
+  max-height: 380px;
 }
 
 #style-images-container {

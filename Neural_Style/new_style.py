@@ -1,3 +1,4 @@
+import datetime
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -176,7 +177,7 @@ def main(user_image, style_image):
 
         if i == 1:
             img = deprocess_image(combination_image.numpy())
-            fname = './static/Modified/' + result_prefix + "_%d.png" % i
+            fname = './static/Modified/' + result_prefix + str(i) + str(datetime.datetime.now().strftime("%Y%m%d%H%M%S")) + '.png'
             keras.preprocessing.image.save_img(fname, img)
         
     return(fname)    
